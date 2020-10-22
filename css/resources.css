@@ -1,0 +1,308 @@
+#resources-page {
+  display: none;
+  grid-template-columns: auto;
+  grid-template-rows: 40px auto;
+  grid-gap: 0;
+  min-height: 100vh;
+  padding: 100px 40px 80px;
+}
+
+#resources-page.show {
+  display: grid;
+}
+
+@media (min-width: 992px) {
+  #resources-page {
+    grid-template-columns: 220px auto;
+    grid-gap: 20px;
+    padding: 110px 120px;
+  }
+}
+
+#resources-page .options {
+  display: flex;
+}
+
+#resources-page .tags-btn {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: var(--text-color2);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--title-font);
+  font-size: 1.2rem;
+  font-weight: 400;
+  justify-content: center;
+  line-height: 1rem;
+  padding: 0;
+  text-decoration: none;
+}
+
+#resources-page .tags-btn:hover {
+  color: var(--color1);
+}
+
+#resources-page .tags {
+  align-self: start;
+  background-color: var(--theme-color-alt2);
+  border: 1px solid var(--theme-color-alt3);
+  flex-shrink: 0;
+  height: 100%;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  max-width: 300px;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 200ms ease-out;
+  width: 100%;
+  z-index: 1000;
+}
+
+#resources-page .tags.show {
+  transform: translate3d(0, 0, 0);
+}
+
+#resources-page .tags.is-open {
+  transform: translate3d(0, 0, 0);
+}
+
+@media (min-width: 992px) {
+  #resources-page .options {
+    display: none;
+  }
+
+  #resources-page .tags {
+    height: auto;
+    left: auto;
+    position: relative;
+    top: auto;
+    transform: translate3d(0, 0, 0);
+    width: 220px;
+    z-index: 0;
+  }
+
+  #resources-page .tags-close-btn {
+    display: none;
+  }
+}
+
+#resources-page .tags-header {
+  align-items: center;
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+#resources-page .tags-title {
+  color: var(--text-color-alt1);
+  font-family: var(--title-font);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.2rem;
+  margin: 0;
+}
+
+#resources-page .tags-content {
+  display: flex;
+  height: calc(100% - 60px);
+  flex-direction: column;
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+}
+
+#resources-page .tags-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+#resources-page .tags-content::-webkit-scrollbar-track {
+  background-color: var(--theme-color-alt2);
+  border-left: 1px solid var(--theme-color-alt3);
+}
+
+#resources-page .tags-content::-webkit-scrollbar-thumb {
+  background-color: var(--theme-color-alt3);
+  border-radius: 5px;
+}
+
+#resources-page .tags-close-btn {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  fill: var(--text-color-alt2);
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+#resources-page .tag-item-container {
+  display: flex;
+  width: 100%;
+}
+
+#resources-page .tag-item {
+  align-items: center;
+  border-left: 2px solid transparent;
+  color: var(--text-color-alt2);
+  display: flex;
+  font-family: var(--title-font);
+  font-size: 1.1rem;
+  font-weight: 400;
+  height: 40px;
+  justify-content: space-between;
+  margin: 0 0 5px;
+  padding: 0 20px 2px;
+  text-decoration: none;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+#resources-page .tag-item.is-active {
+  background-color: var(--theme-color-alt3);
+  border-color: var(--color1);
+  color: var(--text-color-alt1);
+}
+
+#resources-page .tag-item:hover {
+  background-color: var(--theme-color-alt3);
+  color: var(--text-color-alt1);
+}
+
+#resources-page .tag-count {
+  align-items: center;
+  background-color: var(--theme-color-alt2);
+  border: 1px solid var(--theme-color-alt3);
+  border-radius: 15px;
+  color: var(--text-color-alt3);
+  display: inline-flex;
+  font-family: var(--title-font);
+  font-size: 0.9rem;
+  font-weight: 400;
+  height: 30px;
+  line-height: 1.1rem;
+  margin: 1px 0 0;
+  padding: 0 15px;
+  text-decoration: none;
+}
+
+.tag {
+  align-items: center;
+  background-color: var(--theme-color-alt2);
+  border: 1px solid var(--theme-color-alt3);
+  border-radius: 15px;
+  color: var(--text-color-alt3);
+  display: inline-flex;
+  font-family: var(--title-font);
+  font-size: 0.9rem;
+  font-weight: 400;
+  height: 30px;
+  line-height: 1.1rem;
+  margin: 1px 10px 0 0;
+  padding: 0 15px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.tag:last-child {
+  margin: 0;
+}
+
+.tag:hover {
+  background-color: var(--theme-color-alt3);
+  color: var(--text-color-alt1);
+}
+
+.is-active #resources-page .tag-count,
+.is-active #resources-page .tag-count:hover {
+  border-color: var(--theme-color-alt4);
+}
+
+#resources-page .resources-content {
+  align-self: start;
+  display: grid;
+  grid-row-gap: 10px;
+  margin: 0;
+}
+
+.resource-item {
+  align-self: start;
+  background-color: var(--theme-color-alt2);
+  border: 1px solid var(--theme-color-alt3);
+  color: var(--text-color-alt1);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr;
+  margin: 0;
+  width: 100%;
+}
+
+.resource-item-cell {
+  align-items: center;
+  color: var(--text-color-alt1);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  padding: 10px 20px;
+}
+
+.resource-item-cell.resource-title {
+  font-family: var(--title-font);
+  padding: 20px 20px 0;
+}
+
+.resource-item-cell.resource-tags {
+  display: flex;
+  padding: 10px 20px 20px;
+}
+
+.resource-item .url-link {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px dotted var(--text-color-alt2);
+  color: var(--text-color-alt2);
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin: 4px 0 0;
+  padding: 0 0 1px;
+  text-decoration: none;
+}
+
+.resource-item .url-link:hover {
+  border-bottom-color: var(--color-alt1);
+  color: var(--text-color-alt1);
+}
+
+@media (min-width: 576px) {
+  .resource-item {
+    grid-column-gap: 10px;
+    grid-template-columns: 2fr 3fr 2fr;
+    grid-template-rows: 1fr;
+  }
+
+  .resource-item-cell {
+    padding: 10px 20px;
+  }
+
+  .resource-item-cell.resource-title {
+    padding: 10px 20px;
+  }
+
+  .resource-item-cell.resource-tags {
+    padding: 10px 20px;
+  }
+
+  .resource-item .url-link {
+    margin: 0;
+  }
+}
