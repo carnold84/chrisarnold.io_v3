@@ -1,9 +1,10 @@
 <?php
+  include $path.'config.php';
+  
   class Api {
     function fetch($type) {
-      $url = 'https://chris-arnold.a2hosted.com/chrisarnold_io/public/_/items/';
       $curl = curl_init();
-      curl_setopt($curl, CURLOPT_URL, $url.$type);
+      curl_setopt($curl, CURLOPT_URL, API_URL.$type);
       curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "GET");
       curl_setopt($curl, CURLOPT_HTTPHEADER, array(
         "Content-Type: application/json",

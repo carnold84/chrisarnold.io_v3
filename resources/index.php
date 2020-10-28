@@ -5,7 +5,7 @@
   $path = '../';
 
   include $path.'api.php';
-  include $path.'includes/vars.php';
+  include $path.'config.php';
 
   // page variables
   $current_url = '/resources';
@@ -31,7 +31,7 @@
   <![endif]-->
 
   <?php
-    include $path.'includes/main_header.php';
+    include $path.'includes/main-header.php';
   ?>
 
   <div class="main-content">
@@ -51,7 +51,7 @@
     <?php include $path.'/templates/code-item.php'; ?>
   </template>
 
-  <?php include $path.'includes/body_bottom.php'; ?>
+  <?php include $path.'includes/body-bottom.php'; ?>
 </body>
 
 </html>
